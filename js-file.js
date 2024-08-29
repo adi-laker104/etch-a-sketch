@@ -14,48 +14,23 @@ function createGrid(numberOfSquares) {
     }
 }
 
-
-// const btn = document.querySelector("button");
-// btn.addEventListener("click", () => {
-//     let numberOfSquares = prompt("Enter number of squares between 1 and 100");
-//     while (numberOfSquares > 100 || numberOfSquares < 1 ) {
-//         numberOfSquares = prompt("Enter number of squares between 1 and 100");
-//     }
-  
-//     createGrid(numberOfSquares);
-// });
-
-
-
-     
      const btn = document.querySelector("button");
      btn.addEventListener("click", () => {
+        const container = document.querySelector("#container"); 
+
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
+
         let numberOfSquares = prompt("Enter number of squares between 1 and 100");
             while (numberOfSquares > 100 || numberOfSquares < 1 ) {
          numberOfSquares = prompt("Enter number of squares between 1 and 100");
      }
         createGrid(numberOfSquares);
-        let gridElements = document.querySelectorAll(".grid");
-        console.log(gridElements.length);
-        gridElements.forEach((box) =>  {
+        let newGridElements = document.querySelectorAll(".grid");
+        newGridElements.forEach((box) =>  {
             box.addEventListener("mouseover", () => {
                 box.style.backgroundColor = "black";    
             });
     });
 });
-
-
-
-
- // If this logs 0, no elements with the "grid" class are found
-
-
-// console.log("YES")
-// gridElements.forEach((box) =>  {
-//     console.log("INLOOP")
-// box.addEventListener("mouseover", () => {
-//     console.log("SHOW");
-//     box.style.backgroundColor = "black";
-// });
-    
-// });
